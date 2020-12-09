@@ -4,7 +4,9 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Home from '../pages/Home'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
-import Profile from '../pages/Profile'
+import myStates from '../pages/myStates'
+import States from '../pages/States'
+import OneState from '../pages/OneState'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const currentUser = localStorage.getItem('id')
@@ -18,6 +20,9 @@ const Routes = (props) => (
   <Switch>
     <Route exact path='/' component={ Home } />
     <Route path='/register' component={ Register } />
+    <Route exact path='/states' component={ States } />
+    <Route path='/states/:state' component={ OneState } />
+    <Route path='/mystates' component={ myStates } />
     <Route path='/login' render={ (routeComponentProps) => {
       return  <Login 
                 {...routeComponentProps}
@@ -26,8 +31,8 @@ const Routes = (props) => (
                 storeUser={ props.storeUser }
               />
     } } />
-    <PrivateRoute path='/profile' component={ Profile } currentUser={ props.currentUser } />
+    <PrivateRoute path='/mystates' component={ myStates } currentUser={ props.currentUser } />
   </Switch>
 )
 
-export default Routes;
+export default Routes
