@@ -1,5 +1,5 @@
 header {
-  background-color: slategrey;
+  background-color: #2A6F97;
   text-align: left;
   padding: 20px 10px;
   display: flex;
@@ -13,7 +13,13 @@ header {
       color: darken(#fff, 20%)
     }
   }
-
+  .novid-head{
+    color: #fff;
+    margin-top: 0;
+  }
+  i.fas.fa-virus.fa-4x::before{
+    color: #72c217;
+  }
   ul {
     display: flex;
     margin: 0;

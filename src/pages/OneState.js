@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import ByStateModel from '../models/bystate'
+import {useParams} from 'react-router-dom'
 
 const OneState = () => {
-    const [onestate, setonestate] = useState('ca')   
-    // req.params.state
+    const [oneState, setOneState] = useState()
+    const {state} = useParams()
+    console.log(state)
 
     useEffect(() => {
         fetchOneStateData()
     }, [])
 
     const fetchOneStateData = () => {
-        ByStateModel.show(onestate).then(data => {
-            setonestate(data)
+        ByStateModel.show(state).then(data => {
+            setOneState(data)
         })
     }
-    console.log(onestate)
+
+    if (!oneState) {
+        return null
+    }
+
+    console.log(oneState)
     return (
         <div>
-            <h1>oneState</h1>
-        </div>
+            <h1>{state.toUpperCase()}</h1>
+        </div>  
     )
 }
 

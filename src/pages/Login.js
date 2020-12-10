@@ -35,12 +35,12 @@ const Login = props => {
   if (props.currentUser) return <Redirect to='/profile' />
 
   return (
-    <div>
-      <h4>Login</h4>
+    <div className="LogDiv">
+      <h2>Login</h2>
       <form onSubmit={ handleSubmit }>
         <div className="form-group">
-          <label htmlFor="name">Email</label>
-          <input 
+          <label htmlFor="name">Email:</label>
+          <input className="RegInputBox"
             onChange={ handleEmail } 
             value={ email } 
             type="email" 
@@ -51,8 +51,8 @@ const Login = props => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input 
+          <label htmlFor="password">Password:</label>
+          <input className="RegInputBox"
             onChange={ handlePassword } 
             value={ password } 
             type="password" 

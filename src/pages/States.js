@@ -13,6 +13,11 @@ const States = () => {
             setstates(data)
         })
     }
+
+    if(!state) {
+        return null
+    }
+
     console.log(state)
     return (
         <div>

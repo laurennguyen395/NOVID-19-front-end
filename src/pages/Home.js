@@ -1,22 +1,45 @@
 import React, { useState, useEffect } from 'react'
 import UsModel from '../models/us'
+import { Link } from 'react-router-dom'
+
+const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+// Could make each state an opject with upper lower and full name. allStates.filter((state) => {
+// return state.abv = state
+// })
 
 const Home = () => {
   const [us, setUs] = useState()
 
   useEffect(() => {
-    fetchData()
+    fetchUsData()
   }, [])
 
-  const fetchData = () => {
-    UsModel.all(us).then(data => {
-      setUs(data)
+  const fetchUsData = () => {
+    UsModel.all().then(data => {
+      setUs(data[0])
     })
   }
-  // console.log(us)
+
+  if(!us) {
+    return null
+  }
+  
+  console.log(us)
+  const {
+    positive,
+    negative,
+    pending,
+  } = us
+
+  const stateCode = allStates.map(function (item) {
+    return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
+  });
+
   return (
     <div>
-      {/* <p>{us}</p> */}
+      {stateCode}
+      <h1>US STATS</h1>
+      {positive}
     </div>
   )
 }

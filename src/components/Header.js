@@ -6,9 +6,8 @@ const Header = (props) => {
   return (
     <header>
       <div className="logo">
-        <Link to={'/'}>Home!</Link>
+        <Link to={'/'}><i className="fas fa-virus fa-4x"></i>  NOVID-19</Link>
       </div>
-      <h3>NOVID-19</h3>
       <div className="links">
         <ul>
           {props.currentUser ?
