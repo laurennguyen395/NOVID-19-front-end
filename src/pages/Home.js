@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import UsModel from '../models/us'
 import { Link } from 'react-router-dom'
+import UsCardContainer from '../components/UsCardContainer'
+import UsHospitalizedChart from '../components/UsHospitalizedChart'
+import { Card } from 'react-bootstrap'
 
 const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
 // Could make each state an opject with upper lower and full name. allStates.filter((state) => {
@@ -20,16 +23,11 @@ const Home = () => {
     })
   }
 
-  if(!us) {
+  if (!us) {
     return null
   }
-  
-  console.log(us)
-  const {
-    positive,
-    negative,
-    pending,
-  } = us
+
+  // console.log(us)
 
   const stateCode = allStates.map(function (item) {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
@@ -37,9 +35,16 @@ const Home = () => {
 
   return (
     <div>
-      {stateCode}
+
+      <Card className='states'>{stateCode}</Card>
+
       <h1>US STATS</h1>
-      {positive}
+
+      <div className='inlineStuff'>
+        <UsCardContainer us={us} />
+        <UsHospitalizedChart us={us} />
+      </div>
+      
     </div>
   )
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 const myStates = props => {
   return (
-    <h1>myStates of user with ID { props.currentUser }</h1>
+    <h1>myStates</h1>
   )
 }
 

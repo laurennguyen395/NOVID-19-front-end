@@ -31,11 +31,11 @@ const Register = props => {
     e.preventDefault()
 
     if (password === confirmPassword) {
-      UserModel.create({ firstName, lastName, email, password })
+      UserModel.create({ firstName, lastName, email, password, currentState })
         .then(data => {
           console.log('Successful register', data)
           // redirect to /login
-          props.history.push('/profile')
+          props.history.push('/mystates')
         })
     }
   }
