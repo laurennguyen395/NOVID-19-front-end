@@ -3,6 +3,8 @@ import UsModel from '../models/us'
 import { Link } from 'react-router-dom'
 import UsCardContainer from '../components/UsCardContainer'
 import UsHospitalizedChart from '../components/UsHospitalizedChart'
+import UsVentilatorChart from '../components/UsVentilatorChart'
+import UsPositiveVsNegativeChart from '../components/UsPositiveVsNegativeChart'
 import { Card } from 'react-bootstrap'
 
 const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
@@ -43,8 +45,10 @@ const Home = () => {
       <div className='inlineStuff'>
         <UsCardContainer us={us} />
         <UsHospitalizedChart us={us} />
+        <UsVentilatorChart us={us} />
+        <UsPositiveVsNegativeChart us={us} />
       </div>
-      
+
     </div>
   )
 }
