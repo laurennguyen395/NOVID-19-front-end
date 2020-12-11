@@ -60,9 +60,9 @@ const Home = () => {
         <UsPositiveVsNegativeChart us={us} />
       </div>
 
-      <div className='line'>
+
         <UsLineChart usHistory={usHistory} />
-      </div>
+
 
 
     </div>

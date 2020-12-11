@@ -22,8 +22,8 @@ const UsPositiveVsNegativeChart = (props) => {
                 },
             ],
         }}
-        height={4}
-        width={6}
+        height={250}
+        width={250}
         options={{
             maintainAspectRatio: false,
         }}

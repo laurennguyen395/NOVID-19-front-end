@@ -1,15 +1,16 @@
 import React from 'react'
-import { Pie } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 
-const OneStateHospitalizedChart = (props) => {
+const OneStateLineChart = (props) => {
 
     return (
-        <Pie
+        <div className='onestline'>
+        <Line className="line"
         data={{
-            labels: ['Hospitalized', 'Positive Increase', ],
+            labels: ['Positive Increase', 'Negative Increase' ],
             datasets: [
                 {
-                    data: [props.oneState.hospitalizedCurrently, props.oneState.positiveIncrease],
+                    data: [1, 2, 3, 4 ,5],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -26,9 +27,11 @@ const OneStateHospitalizedChart = (props) => {
         width={250}
         options={{
             maintainAspectRatio: false,
+            responsive: true
         }}
     />
+    </div>
     )
 }
 
-export default OneStateHospitalizedChart
+export default OneStateLineChart

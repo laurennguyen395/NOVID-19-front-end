@@ -4,6 +4,7 @@ import { Line } from 'react-chartjs-2'
 const LineTest = (props) => {
 
     return (
+        <div className='onestline'>
         <Line className="line"
         data={{
             labels: ['Positive Increase', 'Negative Increase' ],
@@ -22,12 +23,13 @@ const LineTest = (props) => {
                 },
             ],
         }}
-        height={405}
-        width={100}
+        height={250}
+        width={250}
         options={{
             maintainAspectRatio: false,
         }}
     />
+    </div>
     )
 }
 
