@@ -37,7 +37,6 @@ const OneState = () => {
     return (
         <div>
             <h1>{state.toUpperCase()}</h1>
-            <button onClick={''}>Save State</button><br></br>
 
             <div className='inlineStuff'>
                 <OneStateCardContainer oneState={oneState} />

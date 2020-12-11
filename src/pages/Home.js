@@ -12,6 +12,7 @@ const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', '
 // Could make each state an opject with upper lower and full name. allStates.filter((state) => {
 // return state.abv = state
 // })
+const usHistArr = []
 
 const Home = () => {
   const [us, setUs] = useState()
@@ -31,6 +32,9 @@ const Home = () => {
   const fetchUsHistoryData = () => {
     UsModel.allHistory().then(data => {
       setUsHistory(data)
+      for (let i = 0; i <= 20; i++) {
+        usHistArr.push(data[i])
+      }
     })
   }
 
@@ -39,6 +43,10 @@ const Home = () => {
   }
 
   if (!usHistory) {
+    return null
+  }
+
+  if (!usHistArr) {
     return null
   }
 
@@ -61,7 +69,7 @@ const Home = () => {
       </div>
 
 
-        <UsLineChart usHistory={usHistory} />
+        <UsLineChart usHistory={usHistory} usHistArr={usHistArr} />
 
 
 

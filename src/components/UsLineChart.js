@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 
 const LineTest = (props) => {
-
+    console.log(props.usHistArr)
     return (
         <div className='onestline'>
         <Line className="line"
