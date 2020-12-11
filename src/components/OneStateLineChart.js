@@ -5,7 +5,7 @@ const OneStateLineChart = (props) => {
 
     return (
         <div className='onestline'>
-        <Line className="line"
+        <Line id="line"
         data={{
             labels: ['Positive Increase', 'Negative Increase' ],
             datasets: [

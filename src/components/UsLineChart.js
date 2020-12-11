@@ -1,20 +1,30 @@
 import React, {useEffect} from 'react'
 import { Line } from 'react-chartjs-2'
 
-const LineTest = ({usHistArr}) => {
-console.log(usHistArr[0].death) 
+const UsLineChart = ({usHistArr}) => {
 
+const usHistArrRev = usHistArr.reverse()
+
+const labels =[]
+const data = []
+
+usHistArrRev.forEach(function(item) {
+    labels.push(item.date)
+    data.push(item.positive)
+})
+console.log(labels)
+console.log(data)
     return (
 
         <div className='onestline'>
-        <Line className="line"
+        <Line id="line"
         data={{
-            labels: ['Positive Increase', 'Negative Increase' ],
+            labels: labels,
             datasets: [
                 {
-                    data: [1, 2, 3, 4 ,5],
+                    data: data,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255,255,255, 0)',
                         'rgba(54, 162, 235, 0.2)',
                     ],
                     borderColor: [
@@ -25,14 +35,14 @@ console.log(usHistArr[0].death)
                 },
             ],
         }}
-        height={250}
-        width={250}
+        height={600}
+        width={800}
         options={{
-            maintainAspectRatio: false,
+            maintainAspectRatio: true,
         }}
     />
     </div>
     )
 }
 
-export default LineTest
+export default UsLineChart
