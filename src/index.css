@@ -25,9 +25,6 @@ ul{
   display: flex;
   justify-content: space-evenly;
 }
-/* div.container{
-  margin-right: -800px;
-} */
 div.states.card {
   margin-top: 15px;
 }
@@ -56,9 +53,18 @@ p.usStatNum.card-text {
   margin: 0;
 }
 canvas.chartjs-render-monitor{
+  box-shadow: lightgray;
+  background-color: #f8f8f8;
   max-height: 250px;
   max-width: 250px;
 }
 .inlineStuff{
   display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.line{
+  box-shadow: lightgray;
+  background-color: #f8f8f8;
+  margin-top: 50px;
 }

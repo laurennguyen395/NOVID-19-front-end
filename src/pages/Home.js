@@ -5,6 +5,7 @@ import UsCardContainer from '../components/UsCardContainer'
 import UsHospitalizedChart from '../components/UsHospitalizedChart'
 import UsVentilatorChart from '../components/UsVentilatorChart'
 import UsPositiveVsNegativeChart from '../components/UsPositiveVsNegativeChart'
+import UsLineChart from '../components/UsLineChart'
 import { Card } from 'react-bootstrap'
 
 const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
@@ -14,9 +15,11 @@ const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', '
 
 const Home = () => {
   const [us, setUs] = useState()
+  const [usHistory, setUsHistory] = useState()
 
   useEffect(() => {
     fetchUsData()
+    fetchUsHistoryData()
   }, [])
 
   const fetchUsData = () => {
@@ -24,12 +27,20 @@ const Home = () => {
       setUs(data[0])
     })
   }
+  
+  const fetchUsHistoryData = () => {
+    UsModel.allHistory().then(data => {
+      setUsHistory(data)
+    })
+  }
 
   if (!us) {
     return null
   }
 
-  // console.log(us)
+  if (!usHistory) {
+    return null
+  }
 
   const stateCode = allStates.map(function (item) {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
@@ -48,6 +59,11 @@ const Home = () => {
         <UsVentilatorChart us={us} />
         <UsPositiveVsNegativeChart us={us} />
       </div>
+
+      <div className='line'>
+        <UsLineChart usHistory={usHistory} />
+      </div>
+
 
     </div>
   )

@@ -1,5 +1,5 @@
 const COVID_API_URL = 'https://api.covidtracking.com'
-const REACT_APP_API_URL = "http://localhost:4000/api/v1"
+
 
 class ByStateModel {
 
@@ -11,7 +11,9 @@ class ByStateModel {
     static show = (state) => {
         return fetch(`${COVID_API_URL}/v1/states/${state}/current.json`).then(res => res.json())
     }
-    
+    static allHistory = () => {
+        return fetch(`${COVID_API_URL}/v1/states/daily.json`).then(res => res.json())
+    }
 }
 
 

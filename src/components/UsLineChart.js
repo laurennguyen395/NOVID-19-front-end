@@ -1,15 +1,15 @@
 import React from 'react'
-import { Pie } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 
-const UsPositiveVsNegativeChart = (props) => {
+const LineTest = (props) => {
 
     return (
-        <Pie
+        <Line className="line"
         data={{
             labels: ['Positive Increase', 'Negative Increase' ],
             datasets: [
                 {
-                    data: [props.us.positiveIncrease, props.us.negativeIncrease],
+                    data: [1, 2, 3, 4 ,5],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -22,8 +22,8 @@ const UsPositiveVsNegativeChart = (props) => {
                 },
             ],
         }}
-        height={4}
-        width={6}
+        height={405}
+        width={100}
         options={{
             maintainAspectRatio: false,
         }}
@@ -31,4 +31,4 @@ const UsPositiveVsNegativeChart = (props) => {
     )
 }
 
-export default UsPositiveVsNegativeChart
+export default LineTest

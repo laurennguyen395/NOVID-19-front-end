@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import ByStateModel from '../models/bystate'
+import OneStateCardContainer from '../components/OneStateCardContainer'
 
 const States = () => {
     const [state, setstates] = useState()
+    const [stateHistory, setStateHistory] = useState()
 
     useEffect(() => {
         fetchStateData()
+        fetchStateHistoryData()
     }, [])
 
     const fetchStateData = () => {
@@ -14,14 +17,20 @@ const States = () => {
         })
     }
 
-    if(!state) {
+    const fetchStateHistoryData = () => {
+        ByStateModel.allHistory(stateHistory).then(data => {
+            setStateHistory(data)
+        })
+    }
+
+    if (!state) {
         return null
     }
 
-    console.log(state)
+    console.log(stateHistory)
     return (
         <div>
-            <h1>states</h1>
+            <OneStateCardContainer stateHistory={stateHistory} />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
 const UsHospitalizedChart = (props) => {
-    console.log(props.us)
+
     return (
         <Pie
         data={{

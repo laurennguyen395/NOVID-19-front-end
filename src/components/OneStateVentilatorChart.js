@@ -1,15 +1,15 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
-const UsPositiveVsNegativeChart = (props) => {
+const OneStateVentilatorChart = (props) => {
 
     return (
         <Pie
         data={{
-            labels: ['Positive Increase', 'Negative Increase' ],
+            labels: ['On Ventilator', 'Death Increase' ],
             datasets: [
                 {
-                    data: [props.us.positiveIncrease, props.us.negativeIncrease],
+                    data: [props.oneState.onVentilatorCurrently, props.oneState.deathIncrease],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -31,4 +31,4 @@ const UsPositiveVsNegativeChart = (props) => {
     )
 }
 
-export default UsPositiveVsNegativeChart
+export default OneStateVentilatorChart

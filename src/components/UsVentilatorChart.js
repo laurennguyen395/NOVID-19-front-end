@@ -2,11 +2,11 @@ import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
 const UsVentilatorChart = (props) => {
-    console.log(props.us)
+
     return (
         <Pie
         data={{
-            labels: ['On Ventilator', 'Death Increase', ],
+            labels: ['On Ventilator', 'Death Increase' ],
             datasets: [
                 {
                     label: '# of votes',

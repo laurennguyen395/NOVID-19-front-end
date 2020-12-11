@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import ByStateModel from '../models/bystate'
 import OneStateCardContainer from '../components/OneStateCardContainer'
-import {useParams} from 'react-router-dom'
+import OneStateHospilatizedChart from '../components/OneStateHospilatizedChart'
+import OneStateVentilatorChart from '../components/OneStateVentilatorChart'
+import OneStatePositiveVsNegativeChart from '../components/OneStatePositiveVsNegativeChart'
+import { useParams } from 'react-router-dom'
 
 const OneState = () => {
     const [oneState, setOneState] = useState()
-    const {state} = useParams()
-    console.log(oneState)
+    const { state } = useParams()
+
 
     useEffect(() => {
         fetchOneStateData()
@@ -21,13 +24,19 @@ const OneState = () => {
     if (!oneState) {
         return null
     }
-
+    
     return (
         <div>
             <h1>{state.toUpperCase()}</h1>
             <button onClick={''}>Save State</button><br></br>
-            <OneStateCardContainer oneState={oneState} />
-        </div>  
+
+            <div className='inlineStuff'>
+                <OneStateCardContainer oneState={oneState} />
+                <OneStateHospilatizedChart oneState={oneState} />
+                <OneStateVentilatorChart oneState={oneState} />
+                <OneStatePositiveVsNegativeChart oneState={oneState} />
+            </div>
+        </div>
     )
 }
 
