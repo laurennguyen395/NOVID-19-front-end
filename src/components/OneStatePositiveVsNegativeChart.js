@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
-const UsPositiveVsNegativeChart = (props) => {
+const UsPositiveVsNegativeChart = ({oneState}) => {
 
     return (
         <Pie
@@ -9,7 +9,7 @@ const UsPositiveVsNegativeChart = (props) => {
             labels: ['Positive Increase', 'Negative Increase' ],
             datasets: [
                 {
-                    data: [props.oneState.positiveIncrease, props.oneState.negativeIncrease],
+                    data: [oneState.positiveIncrease, oneState.negativeIncrease],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

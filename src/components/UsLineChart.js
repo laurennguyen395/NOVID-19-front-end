@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Line } from 'react-chartjs-2'
 
-const LineTest = (props) => {
-console.log(props.usHistArr[0])
+const LineTest = ({usHistArr}) => {
+console.log(usHistArr[0].death) 
+
     return (
+
         <div className='onestline'>
         <Line className="line"
         data={{

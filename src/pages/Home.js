@@ -50,23 +50,19 @@ const Home = () => {
     return null
   }
 
-  if (!usHistArr) {
+  if (usHistArr.length === 0) {
     return null
   }
 
   const stateCode = allStates.map(function (item) {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
   });
-
-  // const newUsHistArr = usHistArr.map(function (item, index, array) {
-  //   console.log(item)
-  // })
-
-  // console.log(newUsHistArr)
-
+  
+  
   return (
     <div>
 
+      {/* { usHistArr.length ? fetchUsHistoryData() : "Loading" } */}
       <Card className='states'>{stateCode}</Card>
 
       <h1>US STATS</h1>
@@ -77,12 +73,7 @@ const Home = () => {
         <UsVentilatorChart us={us} />
         <UsPositiveVsNegativeChart us={us} />
       </div>
-
-
-        <UsLineChart usHistory={usHistory} usHistArr={usHistArr} />
-
-
-
+        <UsLineChart usHistArr={usHistArr} />
     </div>
   )
 }
