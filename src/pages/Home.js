@@ -12,11 +12,11 @@ const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', '
 // Could make each state an opject with upper lower and full name. allStates.filter((state) => {
 // return state.abv = state
 // })
-const usHistArr = []
 
 const Home = () => {
   const [us, setUs] = useState()
   const [usHistory, setUsHistory] = useState()
+  const [usHistArr, setUsHistArr] = useState([])
 
   useEffect(() => {
     fetchUsData()
@@ -30,13 +30,17 @@ const Home = () => {
   }
   
   const fetchUsHistoryData = () => {
+    const tempArr = []
     UsModel.allHistory().then(data => {
       setUsHistory(data)
+
       for (let i = 0; i <= 20; i++) {
-        usHistArr.push(data[i])
+        tempArr.push(data[i])
       }
+      setUsHistArr(tempArr)
     })
   }
+
 
   if (!us) {
     return null
@@ -53,6 +57,12 @@ const Home = () => {
   const stateCode = allStates.map(function (item) {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
   });
+
+  // const newUsHistArr = usHistArr.map(function (item, index, array) {
+  //   console.log(item)
+  // })
+
+  // console.log(newUsHistArr)
 
   return (
     <div>
