@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
 
@@ -6,16 +6,16 @@ const Header = (props) => {
   return (
     <header>
       <div className="logo">
-        <Link to={'/'}>Home!</Link>
+        <Link to={'/'}><i className="fas fa-virus fa-4x"></i>  NOVID-19</Link>
       </div>
       <div className="links">
         <ul>
-          { props.currentUser ? 
+          {props.currentUser ?
             <>
-              <li><Link to={'/profile'}>Profile</Link></li>
-              <li><a href="/logout" onClick={ props.logout }>Log Out</a></li>
+              <li><Link to={'/mystates'}>My States</Link></li>
+              <li><a href="/logout" onClick={props.logout}>Log Out</a></li>
             </>
-          :
+            :
             <>
               <li><Link to={'/register'}>Register</Link></li>
               <li><Link to={'/login'}>Login</Link></li>
@@ -24,7 +24,7 @@ const Header = (props) => {
         </ul>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

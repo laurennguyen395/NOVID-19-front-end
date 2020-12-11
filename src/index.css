@@ -14,4 +14,61 @@ code {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+a:hover {
+  color:  #72c217;
+}
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+div.states.card {
+  margin-top: 15px;
+}
+div.usStatCards{
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 425px;
+  height: 170px;
+  margin: 25px 0 0 15px;
+  box-shadow: lightgray;
+}
+div.stat.card-body{
+  height: 70px;
+  margin: 10px 10px -20px 10px;
+  background-color: #89C2D9;
+  padding-bottom: -10px;
+}
+div.usStatText.card-title.h5 {
+  padding: 6px;
+}
+p.usStatNum.card-text {
+  font-size: 25px;
+  margin: 0;
+}
+canvas.chartjs-render-monitor{
+  box-shadow: lightgray;
+  background-color: #f8f8f8;
+  max-height: 250px;
+  max-width: 250px;
+}
+.inlineStuff{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.line{
+  box-shadow: lightgray;
+  background-color: #f8f8f8;
+  margin-top: 50px;
+}
+.onestline{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
 }
