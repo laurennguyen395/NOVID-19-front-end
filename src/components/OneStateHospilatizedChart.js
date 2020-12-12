@@ -6,7 +6,7 @@ const OneStateHospitalizedChart = ({oneState}) => {
     return (
         <Pie
         data={{
-            labels: ['Hospitalized', 'Positive Increase', ],
+            labels: ['Hospitalized', 'Positive Increase' ],
             datasets: [
                 {
                     data: [oneState.hospitalizedCurrently, oneState.positiveIncrease],

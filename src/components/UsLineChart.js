@@ -18,7 +18,7 @@ usHistArrRev.forEach(function(item) {
         <div className='onestline'>
         <Line id="line"
         data={{
-            labels: labels,
+            labels: [labels, 'positive'],
             datasets: [
                 {
                     data: data,

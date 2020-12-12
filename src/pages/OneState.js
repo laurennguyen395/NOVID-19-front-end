@@ -58,7 +58,7 @@ Object.values(oneStateHistArr)
                 <OneStateVentilatorChart oneState={oneState} />
                 <OneStatePositiveVsNegativeChart oneState={oneState} />
             </div>
-                <OneStateLineChart oneStateHistArr={oneStateHistArr} />
+                <OneStateLineChart oneStateHistArr={oneStateHistArr} state={state} />
         </div>
     )
 }
