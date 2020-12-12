@@ -12,8 +12,7 @@ usHistArrRev.forEach(function(item) {
     labels.push(item.date)
     data.push(item.positive)
 })
-console.log(labels)
-console.log(data)
+
     return (
 
         <div className='onestline'>
