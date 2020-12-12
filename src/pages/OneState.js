@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom'
 
 const OneState = () => {
     const [oneState, setOneState] = useState()
-    const [OneStateHistory, setOneStateHistory] = useState()
+    const [oneStateHistory, setOneStateHistory] = useState()
     const { state } = useParams()
 
 
@@ -29,8 +29,11 @@ const OneState = () => {
             setOneStateHistory(data)
         })
     }
-
+console.log(oneStateHistory)
     if (!oneState) {
+        return null
+    }
+    if (!oneStateHistory) {
         return null
     }
 
@@ -44,7 +47,7 @@ const OneState = () => {
                 <OneStateVentilatorChart oneState={oneState} />
                 <OneStatePositiveVsNegativeChart oneState={oneState} />
             </div>
-                <OneStateLineChart OneStateHistory={OneStateHistory} />
+                <OneStateLineChart oneStateHistory={oneStateHistory} />
         </div>
     )
 }
