@@ -44,6 +44,7 @@ const OneStateLineChart = ({ oneStateHistArr, state }) => {
                     labels: graphDate,
                     datasets: [
                         {
+                            label: 'Positive Cases Over Time',
                             data: posData,
                             backgroundColor: [
                                 'rgba(255,255,255, 0)',

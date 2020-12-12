@@ -18,9 +18,10 @@ usHistArrRev.forEach(function(item) {
         <div className='onestline'>
         <Line id="line"
         data={{
-            labels: [labels, 'positive'],
+            labels: labels,
             datasets: [
                 {
+                    label: 'Positive Cases Over Time',
                     data: data,
                     backgroundColor: [
                         'rgba(255,255,255, 0)',
