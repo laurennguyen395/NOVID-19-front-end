@@ -12,6 +12,7 @@ const OneState = () => {
     const [oneStateHistory, setOneStateHistory] = useState()
     const [oneStateHistArr, setOneStateHistArr] = useState()
     const [singleState, setSingleState] = useState()
+    const [singleStateHistArr, setSingleStateHistArr] = useState()
     const { state } = useParams()
 
 
@@ -26,12 +27,12 @@ const OneState = () => {
             setOneState(data)
         })
     }
-    
+
     const fetchOneStateHistoryData = () => {
         const tempStArr = []
         ByStateModel.allHistory().then(data => {
             setOneStateHistory(data)
-            
+
             for (let i = 0; i < 1175; i++) {
                 tempStArr.push(data[i])
             }
@@ -40,23 +41,29 @@ const OneState = () => {
     }
 
     const fetchSingleStateHistData = () => {
+        const singStTempArr = []
         ByStateModel.allStateHistory().then(data => {
             setSingleState(data)
+
+            for (let i = 0; i <= 20; i++) {
+                singStTempArr.push(data[i])
+            }
+            setSingleStateHistArr(singStTempArr)
         })
     }
-    console.log(singleState)
+
     if (!oneStateHistArr) {
         return null
-    }
-
-Object.values(oneStateHistArr)
-
+    }    
     if (!oneState) {
         return null
     }
-    if (!oneStateHistory) {
+    if (!singleState) {
         return null
     }
+    
+    Object.values(oneStateHistArr)
+    // Object.values(singleStateHistArr)
     return (
         <div>
             <h1>{state.toUpperCase()}</h1>
@@ -67,7 +74,7 @@ Object.values(oneStateHistArr)
                 <OneStateVentilatorChart oneState={oneState} />
                 <OneStatePositiveVsNegativeChart oneState={oneState} />
             </div>
-                <OneStateLineChart oneStateHistArr={oneStateHistArr} state={state} />
+            <OneStateLineChart singleState={singleStateHistArr}/>
         </div>
     )
 }

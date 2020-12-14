@@ -40,7 +40,6 @@ const Home = () => {
       setUsHistArr(tempArr)
     })
   }
-// console.log(usHistArr.length)
 
   if (!us) {
     return null

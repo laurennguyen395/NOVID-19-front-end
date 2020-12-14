@@ -1,47 +1,27 @@
 import React, { useState } from 'react'
 import { Line } from 'react-chartjs-2'
 
-const OneStateLineChart = ({ oneStateHistArr, state }) => {
-    const oneStateHistArrRev = oneStateHistArr.reverse()
-    const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+const OneStateLineChart = ({ singleState }) => {
 
-    const oneStLabels = []
-    const oneStLabelsRev = oneStLabels.reverse()
-    const oneStData = []
-    const oneState = []
+    let singleStateRev = singleState.reverse()
+    console.log(singleStateRev)
     const posData = []
     const graphDate = []
 
-    oneStateHistArrRev.forEach(function (item) {
-        oneStLabels.push(item.date)
-        oneStData.push(item.positive)
-        oneState.push(item.state)
-    })
-
-    const setDate = new Set(oneStLabelsRev)
-    for (let date of setDate.values()) {
-        graphDate.push(date)
-    }
-
-
-    const graphDateRev = graphDate.reverse()
-    const graphDateRev1 = graphDateRev.reverse()
-
-    const stateCompare = () => {
-        allStates.forEach(function (state) {
-            let histArrFilt = oneStateHistArr.filter((oneStateFilt) => oneStateFilt.state === state)
-            if (state.toUpperCase() === histArrFilt[0].state) {
-                posData.push(histArrFilt[0].positive)
-            }
+    
+    const stateLoop = () => {
+        singleStateRev.forEach(function (item) {
+            posData.push(item.positive)
+            graphDate.push(item.date)
         })
     }
-    stateCompare()
-console.log()
+    stateLoop()
+
     return (
         <div className='onestline'>
             <Line id="line"
                 data={{
-                    labels: graphDateRev1,
+                    labels: graphDate,
                     datasets: [
                         {
                             label: 'Positive Cases Over Time',
