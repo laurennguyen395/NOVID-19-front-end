@@ -26,15 +26,16 @@ const OneStateLineChart = ({ singleState }) => {
                         {
                             label: 'Positive Cases Over Time',
                             data: posData,
+                            fill: true,
+                            pointRadius: 3,
+                            pointBackgroundColor: 'rgba(137, 194, 217, 0.6)',
                             backgroundColor: [
                                 'rgba(255,255,255, 0)',
-                                'rgba(54, 162, 235, 0.2)',
                             ],
                             borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)'
+                                'rgb(114, 194, 23)'
                             ],
-                            borderWidth: 1
+                    borderWidth: 1
                         },
                     ],
                 }}
