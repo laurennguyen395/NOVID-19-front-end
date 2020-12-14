@@ -35,7 +35,7 @@ const Login = props => {
   if (props.currentUser) return <Redirect to='/profile' />
 
   return (
-    <div className="LogDiv">
+    <div className="logdiv">
       <h2>Login</h2>
       <form onSubmit={ handleSubmit }>
         <div className="form-group">

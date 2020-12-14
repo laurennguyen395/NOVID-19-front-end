@@ -11,12 +11,14 @@ const OneState = () => {
     const [oneState, setOneState] = useState()
     const [oneStateHistory, setOneStateHistory] = useState()
     const [oneStateHistArr, setOneStateHistArr] = useState()
+    const [singleState, setSingleState] = useState()
     const { state } = useParams()
 
 
     useEffect(() => {
         fetchOneStateData()
         fetchOneStateHistoryData()
+        fetchSingleStateHistData()
     }, [])
 
     const fetchOneStateData = () => {
@@ -24,23 +26,30 @@ const OneState = () => {
             setOneState(data)
         })
     }
-
+    
     const fetchOneStateHistoryData = () => {
         const tempStArr = []
         ByStateModel.allHistory().then(data => {
             setOneStateHistory(data)
-
+            
             for (let i = 0; i < 1175; i++) {
                 tempStArr.push(data[i])
             }
             setOneStateHistArr(tempStArr)
         })
     }
+
+    const fetchSingleStateHistData = () => {
+        ByStateModel.allStateHistory().then(data => {
+            setSingleState(data)
+        })
+    }
+    console.log(singleState)
     if (!oneStateHistArr) {
         return null
     }
-Object.values(oneStateHistArr)
 
+Object.values(oneStateHistArr)
 
     if (!oneState) {
         return null

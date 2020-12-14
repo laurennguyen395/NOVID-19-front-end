@@ -42,7 +42,7 @@ const Register = props => {
 
   return (
     
-    <div className="RegDiv">
+    <div className="regdiv">
       <h2>Register</h2>
       <form onSubmit={ handleSubmit }>
         <div className="form-group">

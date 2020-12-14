@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Line } from 'react-chartjs-2'
 
 const OneStateLineChart = ({ oneStateHistArr, state }) => {
-    const [stateData, setStateData] = useState()
     const oneStateHistArrRev = oneStateHistArr.reverse()
     const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
 
@@ -17,14 +16,16 @@ const OneStateLineChart = ({ oneStateHistArr, state }) => {
         oneStLabels.push(item.date)
         oneStData.push(item.positive)
         oneState.push(item.state)
-        // console.log(item.state)
     })
-
 
     const setDate = new Set(oneStLabelsRev)
     for (let date of setDate.values()) {
         graphDate.push(date)
     }
+
+
+    const graphDateRev = graphDate.reverse()
+    const graphDateRev1 = graphDateRev.reverse()
 
     const stateCompare = () => {
         allStates.forEach(function (state) {
@@ -35,13 +36,12 @@ const OneStateLineChart = ({ oneStateHistArr, state }) => {
         })
     }
     stateCompare()
-
-    // console.log(oneStData)
+console.log()
     return (
         <div className='onestline'>
             <Line id="line"
                 data={{
-                    labels: graphDate,
+                    labels: graphDateRev1,
                     datasets: [
                         {
                             label: 'Positive Cases Over Time',
