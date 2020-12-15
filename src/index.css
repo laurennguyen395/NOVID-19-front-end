@@ -19,7 +19,7 @@ code {
   height: 100vh;
 }
 .footer{
-  background-color: #2A6F97;
+  background-color: #2a6f97;
   color: white;
   width: 100vw;
   height: 2.5rem; 
@@ -92,6 +92,50 @@ canvas#line.chartjs-render-monitor{
   display: flex;
   justify-content: center;
   margin-top: 25px;
+}
+.regdiv, .logdiv {
+  color: #595959;
+  width: 70%;
+  margin: 0 auto;
+}
+.regdiv form, .logdiv form {
+  display: table;
+  margin: 25px auto;
+  background: rgba(137, 194, 217,0.4);
+  padding: 15px;
+  border-radius: 10px;
+}
+.regdiv label, .logdiv label {
+  margin-right: 5px;
+  display: table-cell;
+}
+.RegInputBox {
+  border: none;
+  height: 25px;
+  width: 200px;
+}
+button {
+  background-color: white;
+  border-radius: 5px;
+  border: solid 1px white;
+  color: #2a6f97;
+  font-weight: 600;
+  font-size: .90em;
+  margin-top: 15px;
+  width: 80px;
+  height: 40px;
+}
+button:hover {
+  cursor: pointer;
+}
+#saveState{
+  background-color: rgba(137, 194, 217, 0.6);
+  width: 100px;
+  margin-bottom: 20px;
+  border-color: white;
+}
+.myStates{
+  height: 100vh;
 }
 @media only screen and (max-width: 1080px) {
   .inlineStuff {

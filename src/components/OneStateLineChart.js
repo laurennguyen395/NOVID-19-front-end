@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2'
 const OneStateLineChart = ({ singleState }) => {
 
     let singleStateRev = singleState.reverse()
-    console.log(singleStateRev)
+
     const posData = []
     const graphDate = []
 

@@ -54,27 +54,32 @@ const OneState = () => {
 
     if (!oneStateHistArr) {
         return null
-    }    
+    }
     if (!oneState) {
         return null
     }
     if (!singleState) {
         return null
     }
-    
+
+
     Object.values(oneStateHistArr)
     // Object.values(singleStateHistArr)
     return (
         <div>
             <h1>{state.toUpperCase()}</h1>
-
-            <div className='inlineStuff'>
-                <OneStateCardContainer oneState={oneState} />
-                <OneStateHospilatizedChart oneState={oneState} />
-                <OneStateVentilatorChart oneState={oneState} />
-                <OneStatePositiveVsNegativeChart oneState={oneState} />
-            </div>
-            <OneStateLineChart singleState={singleStateHistArr}/>
+            {singleState !== false ? (
+                <>
+                    <div className='inlineStuff'>
+                        <OneStateCardContainer oneState={oneState} />
+                        <OneStateHospilatizedChart oneState={oneState} />
+                        <OneStateVentilatorChart oneState={oneState} />
+                        <OneStatePositiveVsNegativeChart oneState={oneState} />
+                    </div>
+                    <OneStateLineChart singleState={singleStateHistArr} />
+                </>
+            ) : ('Please Reload The Page')}
+            {/* <button id='saveState'>Save State</button> */}
         </div>
     )
 }
