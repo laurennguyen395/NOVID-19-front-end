@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ByStateModel from '../models/bystate'
+import StateModel from '../models/saveState'
+import { useHistory, Link } from 'react-router-dom'
 import OneStateCardContainer from '../components/OneStateCardContainer'
 import OneStateHospilatizedChart from '../components/OneStateHospilatizedChart'
 import OneStateVentilatorChart from '../components/OneStateVentilatorChart'
@@ -7,13 +9,14 @@ import OneStatePositiveVsNegativeChart from '../components/OneStatePositiveVsNeg
 import OneStateLineChart from '../components/OneStateLineChart'
 import { useParams } from 'react-router-dom'
 
-const OneState = () => {
+const OneState = (props) => {
     const [oneState, setOneState] = useState()
     const [oneStateHistory, setOneStateHistory] = useState()
-    const [oneStateHistArr, setOneStateHistArr] = useState()
+    const [oneStateHistArr, setOneStateHistArr] = useState([])
     const [singleState, setSingleState] = useState()
-    const [singleStateHistArr, setSingleStateHistArr] = useState()
+    const [singleStateHistArr, setSingleStateHistArr] = useState([])
     const { state } = useParams()
+    let history = useHistory()
 
 
     useEffect(() => {
@@ -52,6 +55,13 @@ const OneState = () => {
         })
     }
 
+    console.log(props.location.pathname.slice(8))
+    const addState = (props) => {
+        const userId = localStorage.getItem('id')
+        StateModel.create(props.location.pathname.slice(8), userId).then(history.push('/mystates'))
+    }
+
+
     if (!oneStateHistArr) {
         return null
     }
@@ -79,7 +89,7 @@ const OneState = () => {
                     <OneStateLineChart singleState={singleStateHistArr} />
                 </>
             ) : ('Please Reload The Page')}
-            {/* <button id='saveState'>Save State</button> */}
+            <button id='saveState' onClick={addState}>Save State</button>
         </div>
     )
 }

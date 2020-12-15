@@ -54,7 +54,20 @@ const Home = () => {
   const stateCode = allStates.map(function (item) {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
   });
-  
+
+  const fullNameStateCode = (allStates, fullStateNames) => {
+    const iterator = fullStateNames.values()
+    for (let i = 0; i < allStates.length; i++) {
+      for (let j = 0; j < fullStateNames.length; j++) {
+        if (i === j) {
+          for (const value of iterator) {
+            console.log(value)
+          }
+        }
+      }
+    }
+  }
+  fullNameStateCode(allStates, fullStateNames)
   
   return (
     <div>

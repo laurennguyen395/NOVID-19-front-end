@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import StateModel from '../models/saveState'
 
-const myStates = props => {
-  return (
+const MyStates = () => {
+
+
+  return(
     <div className="myStates">
-    <h1>myStates</h1>
-    <p>there are all the states that I am goung to save</p>
+      <h1>My States</h1>
+      <h3>C'mon lauren, You can do it. SAVE STATES HERE!!</h3>
     </div>
   )
 }
 
-export default myStates
+export default MyStates
