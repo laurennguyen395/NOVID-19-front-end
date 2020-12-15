@@ -25,14 +25,14 @@ const UsLineChart = ({ usHistArr }) => {
                             data: data,
                             fill: true,
                             pointRadius: 3,
+                            borderWidth: 2,
                             pointBackgroundColor: 'rgba(137, 194, 217, 0.6)',
                             backgroundColor: [
                                 'rgba(255,255,255, 0)',
                             ],
                             borderColor: [
-                                'rgb(114, 194, 23)'
-                            ],
-                    borderWidth: 1
+                                'rgba(114, 194, 23, 0.5)'
+                            ]
                         },
                     ],
                 }}

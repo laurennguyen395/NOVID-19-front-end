@@ -68,7 +68,7 @@ const OneState = () => {
     return (
         <div>
             <h1>{state.toUpperCase()}</h1>
-            {singleState !== false ? (
+            {singleState !== true ? (
                 <>
                     <div className='inlineStuff'>
                         <OneStateCardContainer oneState={oneState} />

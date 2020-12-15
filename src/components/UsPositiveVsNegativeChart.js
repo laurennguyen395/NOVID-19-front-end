@@ -15,8 +15,8 @@ const UsPositiveVsNegativeChart = ({us}) => {
                         'rgba(137, 194, 217,0.4)',
                     ],
                     borderColor: [
-                        'rgba(114, 194, 23, 1)',
-                        'rgba(137, 194, 217, 1)'
+                        'rgba(114, 194, 23, 0.5)',
+                        'rgba(137, 194, 217, 0.5)'
                     ],
                     borderWidth: 1
                 },
