@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Routes from './config/Routes'
+import './components/Header.scss';
 import './App.css'
 import UserModel from './models/user'
 

@@ -11,8 +11,8 @@ const UsHospitalizedChart = ({us}) => {
                 {
                     data: [us.hospitalized, us.positiveIncrease],
                     backgroundColor: [
-                        'rgba(114, 194, 23, 0.4)',
-                        'rgba(137, 194, 217,0.4)',
+                        'rgba(114, 194, 23, 0.5)',
+                        'rgba(137, 194, 217,0.5)',
                     ],
                     borderColor: [
                         'rgba(114, 194, 23, 0.5)',

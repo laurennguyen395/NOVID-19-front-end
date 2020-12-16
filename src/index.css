@@ -1,12 +1,21 @@
 body {
   margin: 0;
   height: 100vh;
+  background: url('https://i.imgur.com/eCDAZyK.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 div.logo{
   margin-left: 14px;
+}
+h1{
+  font-size: 50px;
+  margin-top: 20px;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
