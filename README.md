@@ -76,11 +76,14 @@ The following code makes a call to a model that makes a call to the API, calling
         </div>
         ```
 ## Blockers and Unsolved Problems
-Working through everything indiviually was a lot more challenging than past projects where I had the opportunity to work with a group. 
+   Working through everything indiviually was a lot more challenging than past projects where I had the opportunity to work with a group. I faced challenges early on working with the external API, making sure I was reaching the correct endpoints and pulling the data I needed. Connecting that to my REACT front end presented some difficulties but being able to reference past projects allowed me to really understand where I needed to go. There are some unsolved problems with styling and getting each individual users saved states looking more presentable in the browser. Lastly, working with currentUser and local storage, I face some issues with having to refresh the page in order to get the correct info to populate. 
 
-I faced challenges early on working with the external API, making sure I was reaching the correct endpoints and pulling the data I needed. Connecting that to my REACT front end presented some difficulties but being able to reference past projects allowed me to really understand where I needed to go. 
+## Future Enhancements
+- I would love to be able to find downloadable outlines of each individual state, so when a user saves a state, instead of just saving the abbreviation of the state, it populates the 'MyStates' page with images of their states.
+- Working more with different styles, different colors and different pictures in order to make the page appear more professional.
+- Finding an API that provides statistics for specific cities inside a users saved state.
 
-There are some unsolved problems with styling and getting each individual users saved states looking more presentable in the browser. 
-
-Lastly, working with currentUser and local storage, I face some issues with having to refresh the page in order to get the correct info to populate. 
-
+## Assets
+- [The Covid Tracking Project](https://covidtracking.com/)
+- [Figma](https://www.figma.com/file/zafn5kRrCsXyMfZ5pbRjWY/NOVID-19?node-id=0%3A1)
+- [Trello](https://trello.com/b/iwIXypZi/novid-19)
