@@ -5,10 +5,11 @@ header {
   padding: 20px 10px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   a {
     color: #fff;
     transition: color 0.3s ease;
+    font-size: 22px;
 
     &:hover {
       color: darken(#fff, 20%)
@@ -21,7 +22,7 @@ header {
   }
   
   div.links{
-    margin-top:39px;
+    margin-top:55px;
   }
   .novid-head{
     color: #fff;

@@ -73,35 +73,13 @@ const OneState = (props) => {
         return null
     }
 
-
-// const fullName = (fullStateNames) => {
-//     const iterator = fullStateNames.values()
-//     for (let i = 0; i < iterator.length; i++) {
-
-//     }
-// }
-
-    // const fullNameStateCode = (allStates, fullStateNames) => {
-    //     const iterator = fullStateNames.values()
-    //     for (let i = 0; i < allStates.length; i++) {
-    //         for (let j = 0; j < fullStateNames.length; j++) {
-    //             if (i === j) {
-    //                 for (const value of iterator) {
-    //                     return value
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // fullNameStateCode(allStates, fullStateNames)
-
     const getFullName = () => {
         const indexOf = allStates.indexOf(state.toUpperCase())
         return fullStateNames[indexOf]
     }
 
     Object.values(oneStateHistArr)
-    // Object.values(singleStateHistArr)
+
     return (
         <div>
             <h1>{getFullName()}</h1>

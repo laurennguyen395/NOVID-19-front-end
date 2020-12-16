@@ -1,16 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {Card} from 'react-bootstrap'
+
 
 const OneStateCard = ({states}) => {
     console.log(states)
 
 
     return(
-        <div>
+        <>
         {states.map((state, index) => {
-            return(<Link to={`/states/${state.savedState.toLowerCase()}`} key={Math.random()}>{state.savedState.toUpperCase()} </Link>)
+            return(<Card className='statesCard'><Link className='mine' to={`/states/${state.savedState.toLowerCase()}`} key={Math.random()}>{state.savedState.toUpperCase()} </Link> </Card>)
         })}
-        </div>
+        </>
     )
 }
 
