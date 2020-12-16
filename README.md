@@ -29,7 +29,8 @@ Personally, I wanted to be able to work with an external API in order to play wi
 ![SPNWireframe](https://i.imgur.com/J7wPovB.png)
 
 ## Code Snippets
-`const [us, setUs] = useState()
+` 
+  const [us, setUs] = useState()
   const [usHistory, setUsHistory] = useState()
   const [usHistArr, setUsHistArr] = useState([])
 
@@ -54,4 +55,5 @@ Personally, I wanted to be able to work with an external API in order to play wi
       }
       setUsHistArr(tempArr)
     })
-  }`
+  }
+  `
