@@ -27,3 +27,31 @@ Personally, I wanted to be able to work with an external API in order to play wi
 ![NVD19Wireframe](## Wireframing / Pre-Code Planning
 
 ![SPNWireframe](https://i.imgur.com/J7wPovB.png)
+
+## Code Snippets
+`const [us, setUs] = useState()
+  const [usHistory, setUsHistory] = useState()
+  const [usHistArr, setUsHistArr] = useState([])
+
+  useEffect(() => {
+    fetchUsData()
+    fetchUsHistoryData()
+  }, [])
+
+  const fetchUsData = () => {
+    UsModel.all().then(data => {
+      setUs(data[0])
+    })
+  }
+  
+  const fetchUsHistoryData = () => {
+    const tempArr = []
+    UsModel.allHistory().then(data => {
+      setUsHistory(data)
+
+      for (let i = 0; i <= 20; i++) {
+        tempArr.push(data[i])
+      }
+      setUsHistArr(tempArr)
+    })
+  }`
