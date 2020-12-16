@@ -29,31 +29,49 @@ Personally, I wanted to be able to work with an external API in order to play wi
 ![SPNWireframe](https://i.imgur.com/J7wPovB.png)
 
 ## Code Snippets
-` 
-  const [us, setUs] = useState()
-  const [usHistory, setUsHistory] = useState()
-  const [usHistArr, setUsHistArr] = useState([])
+`
+   const fetchSingleStateHistData = () => {
+        const singStTempArr = []
+        ByStateModel.allStateHistory().then(data => {
+            setSingleState(data)
 
-  useEffect(() => {
-    fetchUsData()
-    fetchUsHistoryData()
-  }, [])
-
-  const fetchUsData = () => {
-    UsModel.all().then(data => {
-      setUs(data[0])
-    })
-  }
-  
-  const fetchUsHistoryData = () => {
-    const tempArr = []
-    UsModel.allHistory().then(data => {
-      setUsHistory(data)
-
-      for (let i = 0; i <= 20; i++) {
-        tempArr.push(data[i])
-      }
-      setUsHistArr(tempArr)
-    })
-  }
+            for (let i = 0; i <= 20; i++) {
+                singStTempArr.push(data[i])
+            }
+            setSingleStateHistArr(singStTempArr)
+        })
+    }
   `
+  `
+  return (
+        <div className='onestline'>
+            <Line id="line"
+                data={{
+                    labels: graphDate,
+                    datasets: [
+                        {
+                            label: 'Positive Cases Over Time',
+                            data: posData,
+                            fill: true,
+                            pointRadius: 3,
+                            borderWidth: 2,
+                            pointBackgroundColor: 'rgba(137, 194, 217, 0.6)',
+                            backgroundColor: [
+                                'rgba(255,255,255, 0)',
+                            ],
+                            borderColor: [
+                                'rgba(114, 194, 23, 0.6)'
+                            ]
+                        },
+                    ],
+                }}
+                height={250}
+                width={250}
+                options={{
+                    maintainAspectRatio: false,
+                    responsive: true
+                }}
+            />
+        </div>`
+  
+  
