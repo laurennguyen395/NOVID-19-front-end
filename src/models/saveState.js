@@ -8,8 +8,8 @@ class StateModel {
         return fetch(`${REACT_APP_API_URL}/mystates`).then(res => res.json())
     }
 
-    static show = (saved_stateId) => {
-        return fetch(`${REACT_APP_API_URL}/mystates/${saved_stateId}`).then(res => res.json())
+    static show = () => {
+        return fetch(`${REACT_APP_API_URL}/mystates/${userId}`).then(res => res.json())
     }
 
     static create = (savedState, userId) => {

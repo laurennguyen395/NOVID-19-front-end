@@ -9,6 +9,9 @@ import OneStatePositiveVsNegativeChart from '../components/OneStatePositiveVsNeg
 import OneStateLineChart from '../components/OneStateLineChart'
 import { useParams } from 'react-router-dom'
 
+const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+const fullStateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
+
 const OneState = (props) => {
     const [oneState, setOneState] = useState()
     const [oneStateHistory, setOneStateHistory] = useState()
@@ -17,7 +20,6 @@ const OneState = (props) => {
     const [singleStateHistArr, setSingleStateHistArr] = useState([])
     const { state } = useParams()
     let history = useHistory()
-
 
     useEffect(() => {
         fetchOneStateData()
@@ -55,12 +57,11 @@ const OneState = (props) => {
         })
     }
 
-    console.log(props.location.pathname.slice(8))
-    const addState = (props) => {
+    const addState = () => {
         const userId = localStorage.getItem('id')
+        console.log(props.location.pathname.slice(8))
         StateModel.create(props.location.pathname.slice(8), userId).then(history.push('/mystates'))
     }
-
 
     if (!oneStateHistArr) {
         return null
@@ -73,11 +74,37 @@ const OneState = (props) => {
     }
 
 
+// const fullName = (fullStateNames) => {
+//     const iterator = fullStateNames.values()
+//     for (let i = 0; i < iterator.length; i++) {
+
+//     }
+// }
+
+    // const fullNameStateCode = (allStates, fullStateNames) => {
+    //     const iterator = fullStateNames.values()
+    //     for (let i = 0; i < allStates.length; i++) {
+    //         for (let j = 0; j < fullStateNames.length; j++) {
+    //             if (i === j) {
+    //                 for (const value of iterator) {
+    //                     return value
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // fullNameStateCode(allStates, fullStateNames)
+
+    const getFullName = () => {
+        const indexOf = allStates.indexOf(state.toUpperCase())
+        return fullStateNames[indexOf]
+    }
+
     Object.values(oneStateHistArr)
     // Object.values(singleStateHistArr)
     return (
         <div>
-            <h1>{state.toUpperCase()}</h1>
+            <h1>{getFullName()}</h1>
             {singleState !== true ? (
                 <>
                     <div className='inlineStuff'>

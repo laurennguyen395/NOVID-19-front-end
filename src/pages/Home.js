@@ -9,7 +9,6 @@ import UsLineChart from '../components/UsLineChart'
 import { Card } from 'react-bootstrap'
 
 const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
-const fullStateNames = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
 const Home = () => {
   const [us, setUs] = useState()
@@ -55,19 +54,6 @@ const Home = () => {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
   });
 
-  const fullNameStateCode = (allStates, fullStateNames) => {
-    const iterator = fullStateNames.values()
-    for (let i = 0; i < allStates.length; i++) {
-      for (let j = 0; j < fullStateNames.length; j++) {
-        if (i === j) {
-          for (const value of iterator) {
-            console.log(value)
-          }
-        }
-      }
-    }
-  }
-  fullNameStateCode(allStates, fullStateNames)
   
   return (
     <div>

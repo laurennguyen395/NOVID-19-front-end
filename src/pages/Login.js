@@ -32,7 +32,7 @@ const Login = props => {
   }
 
   // if user is logged in, redirect
-  if (props.currentUser) return <Redirect to='/mystates' />
+  if (props.currentUser) return <Redirect to='/' />
 
   return (
     <div className="logdiv">
