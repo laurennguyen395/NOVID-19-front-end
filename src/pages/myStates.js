@@ -15,17 +15,16 @@ const MyStates = () => {
     })
   }
   
-  const mapSavedStates = () => {
-    states.map((states, index) => {
-      return states
-    })
-  }
+  // const mapSavedStates = () => {
+  //   states.map((states, index) => {
+  //     return states
+  //   })
+  // }
 
   console.log(states)
   return(
     <div className="myStates">
       <h1>My States</h1>
-    {states}
       <h3>C'mon lauren, You can do it. SAVE STATES HERE!!</h3>
     </div>
   )
