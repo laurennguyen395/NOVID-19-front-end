@@ -72,6 +72,7 @@ The following code makes a call to a model that makes a call to the API, calling
                 }}
             />
         </div>
+```
 
 ## Blockers and Unsolved Problems
 Working through everything indiviually was a lot more challenging than past projects where I had the opportunity to work with a group. I faced challenges early on working with the external API, making sure I was reaching the correct endpoints and pulling the data I needed. Connecting that to my REACT front end presented some difficulties but being able to reference past projects allowed me to really understand where I needed to go. There are some unsolved problems with styling and getting each individual users saved states looking more presentable in the browser. Lastly, working with currentUser and local storage, I face some issues with having to refresh the page in order to get the correct info to populate. 
