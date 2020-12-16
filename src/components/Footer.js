@@ -1,8 +1,9 @@
 import React from 'react'
 
 const Footer = () => {
+  
   return <div className="footer">
-    <p>Data From: CovidTracking.com Copyright © 2020</p>
+    <p className="footerp">Data From: CovidTracking.com Copyright © 2020 🦠</p>
   </div>
 }
 

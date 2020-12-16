@@ -2,10 +2,10 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 
 
-const OneStateCardContainer = (props) => {
+const OneStateCardContainer = ({oneState}) => {
 
 
-    if (!props) {
+    if (!oneState) {
         return null
     }
 
@@ -20,7 +20,7 @@ const OneStateCardContainer = (props) => {
                     <Card.Title className="usStatText">Positive:</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
                     <Card.Text className="usStatNum">
-                        {props.oneState.positive}
+                        {oneState.positive}
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -30,7 +30,7 @@ const OneStateCardContainer = (props) => {
                     <Card.Title className="usStatText">Negative:</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
                     <Card.Text className="usStatNum">
-                    {props.oneState.negative}
+                    {oneState.negative}
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -40,7 +40,7 @@ const OneStateCardContainer = (props) => {
                     <Card.Title className="usStatText">Deaths:</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
                     <Card.Text className="usStatNum">
-                    {props.oneState.death}
+                    {oneState.death}
                     </Card.Text>
                 </Card.Body>
             </Card>
@@ -50,7 +50,7 @@ const OneStateCardContainer = (props) => {
                     <Card.Title className="usStatText">Death Increase:</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
                     <Card.Text className="usStatNum">
-                    {props.oneState.deathIncrease}
+                    {oneState.deathIncrease}
                     </Card.Text>
                 </Card.Body>
             </Card>

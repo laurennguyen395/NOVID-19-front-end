@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
-const UsHospitalizedChart = (props) => {
+const UsHospitalizedChart = ({us}) => {
 
     return (
         <Pie
@@ -9,14 +9,14 @@ const UsHospitalizedChart = (props) => {
             labels: ['Hospitalized', 'Positive Increase', ],
             datasets: [
                 {
-                    data: [props.us.hospitalized, props.us.positiveIncrease],
+                    data: [us.hospitalized, us.positiveIncrease],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(114, 194, 23, 0.4)',
+                        'rgba(137, 194, 217,0.4)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)'
+                        'rgba(114, 194, 23, 0.5)',
+                        'rgba(137, 194, 217, 0.5)'
                     ],
                     borderWidth: 1
                 },

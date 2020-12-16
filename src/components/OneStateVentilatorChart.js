@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
-const OneStateVentilatorChart = (props) => {
+const OneStateVentilatorChart = ({oneState}) => {
 
     return (
         <Pie
@@ -9,14 +9,14 @@ const OneStateVentilatorChart = (props) => {
             labels: ['On Ventilator', 'Death Increase' ],
             datasets: [
                 {
-                    data: [props.oneState.onVentilatorCurrently, props.oneState.deathIncrease],
+                    data: [oneState.onVentilatorCurrently, oneState.deathIncrease],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(114, 194, 23, 0.4)',
+                        'rgba(137, 194, 217,0.4)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)'
+                        'rgba(114, 194, 23, 0.5)',
+                        'rgba(137, 194, 217, 0.5)'
                     ],
                     borderWidth: 1
                 },

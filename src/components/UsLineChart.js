@@ -1,36 +1,49 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 
-const LineTest = (props) => {
+const UsLineChart = ({ usHistArr }) => {
+
+    const usHistArrRev = usHistArr.reverse()
+
+    const labels = []
+    const data = []
+
+    usHistArrRev.forEach(function (item) {
+        labels.push(item.date)
+        data.push(item.positive)
+    })
 
     return (
+
         <div className='onestline'>
-        <Line className="line"
-        data={{
-            labels: ['Positive Increase', 'Negative Increase' ],
-            datasets: [
-                {
-                    data: [1, 2, 3, 4 ,5],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
+            <Line id="line"
+                data={{
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Positive Cases Over Time',
+                            data: data,
+                            fill: true,
+                            pointRadius: 3,
+                            borderWidth: 2,
+                            pointBackgroundColor: 'rgba(137, 194, 217, 0.6)',
+                            backgroundColor: [
+                                'rgba(255,255,255, 0)',
+                            ],
+                            borderColor: [
+                                'rgba(114, 194, 23, 0.5)'
+                            ]
+                        },
                     ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)'
-                    ],
-                    borderWidth: 1
-                },
-            ],
-        }}
-        height={250}
-        width={250}
-        options={{
-            maintainAspectRatio: false,
-        }}
-    />
-    </div>
+                }}
+                height={600}
+                width={800}
+                options={{
+                    maintainAspectRatio: true,
+                }}
+            />
+        </div>
     )
 }
 
-export default LineTest
+export default UsLineChart

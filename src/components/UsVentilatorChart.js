@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
-const UsVentilatorChart = (props) => {
+const UsVentilatorChart = ({us}) => {
 
     return (
         <Pie
@@ -10,14 +10,14 @@ const UsVentilatorChart = (props) => {
             datasets: [
                 {
                     label: '# of votes',
-                    data: [props.us.onVentilatorCurrently, props.us.deathIncrease],
+                    data: [us.onVentilatorCurrently, us.deathIncrease],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(114, 194, 23, 0.4)',
+                        'rgba(137, 194, 217,0.4)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)'
+                        'rgba(114, 194, 23, 0.5)',
+                        'rgba(137, 194, 217, 0.5)'
                     ],
                     borderWidth: 1
                 },

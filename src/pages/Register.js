@@ -35,14 +35,14 @@ const Register = props => {
         .then(data => {
           console.log('Successful register', data)
           // redirect to /login
-          props.history.push('/mystates')
+          props.history.push('/')
         })
     }
   }
 
   return (
     
-    <div className="RegDiv">
+    <div className="regdiv">
       <h2>Register</h2>
       <form onSubmit={ handleSubmit }>
         <div className="form-group">

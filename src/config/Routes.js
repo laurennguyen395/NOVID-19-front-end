@@ -4,7 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Home from '../pages/Home'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
-import myStates from '../pages/myStates'
+import MyStates from '../pages/MyStates'
 import States from '../pages/States'
 import OneState from '../pages/OneState'
 
@@ -22,7 +22,7 @@ const Routes = (props) => (
     <Route path='/register' component={ Register } />
     <Route exact path='/states' component={ States } />
     <Route path='/states/:state' component={ OneState } />
-    <Route path='/mystates' component={ myStates } />
+    <Route path='/mystates' component={ MyStates } />
     <Route path='/login' render={ (routeComponentProps) => {
       return  <Login 
                 {...routeComponentProps}
@@ -31,7 +31,7 @@ const Routes = (props) => (
                 storeUser={ props.storeUser }
               />
     } } />
-    <PrivateRoute path='/mystates' component={ myStates } currentUser={ props.currentUser } />
+    <PrivateRoute path='/mystates' component={ MyStates } currentUser={ props.currentUser } />
   </Switch>
 )
 

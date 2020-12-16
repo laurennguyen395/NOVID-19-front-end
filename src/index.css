@@ -1,24 +1,40 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+div.logo{
+  margin-left: 14px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.regdiv {
+  height: 100vh;
+}
+.logdiv {
+  height: 100vh;
+}
+.footer{
+  background-color: #2a6f97;
+  color: white;
+  width: 100vw;
+  height: 2.5rem; 
+  padding-top:5px;
+}
+p.footerp{
+  margin: 5px auto auto 0px;
+}
 a {
   text-decoration: none;
   cursor: pointer;
   color: black;
 }
 a:hover {
-  color:  #72c217;
+  color:  rgb(114, 194, 23);
 }
 ul{
   list-style: none;
@@ -29,7 +45,7 @@ div.states.card {
   margin-top: 15px;
 }
 div.usStatCards{
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -41,7 +57,7 @@ div.usStatCards{
 div.stat.card-body{
   height: 70px;
   margin: 10px 10px -20px 10px;
-  background-color: #89C2D9;
+  background-color: rgba(137, 194, 217, 0.6);
   padding-bottom: -10px;
 }
 div.usStatText.card-title.h5 {
@@ -53,13 +69,20 @@ p.usStatNum.card-text {
 }
 canvas.chartjs-render-monitor{
   box-shadow: lightgray;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   max-height: 250px;
   max-width: 250px;
 }
+canvas#line.chartjs-render-monitor{
+  box-shadow: lightgray;
+  /* background-color: #f8f8f8; */
+  max-height: 600px;
+  max-width: 1080px;
+  margin-bottom: 25px;
+}
 .inlineStuff{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
 }
 .line{
@@ -71,4 +94,56 @@ canvas.chartjs-render-monitor{
   display: flex;
   justify-content: center;
   margin-top: 25px;
+}
+.regdiv, .logdiv {
+  color: #595959;
+  width: 70%;
+  margin: 0 auto;
+}
+.regdiv form, .logdiv form {
+  display: table;
+  margin: 25px auto;
+  background: rgba(137, 194, 217,0.4);
+  padding: 15px;
+  border-radius: 10px;
+}
+.regdiv label, .logdiv label {
+  margin-right: 5px;
+  display: table-cell;
+}
+.RegInputBox {
+  border: none;
+  height: 25px;
+  width: 200px;
+}
+button {
+  background-color: white;
+  border-radius: 5px;
+  border: solid 1px white;
+  color: #2a6f97;
+  font-weight: 600;
+  font-size: .90em;
+  margin-top: 15px;
+  width: 80px;
+  height: 40px;
+}
+button:hover {
+  cursor: pointer;
+}
+#saveState{
+  background-color: rgba(137, 194, 217, 0.6);
+  width: 100px;
+  margin-bottom: 20px;
+  border-color: white;
+}
+.myStates{
+  height: 100vh;
+}
+@media only screen and (max-width: 1080px) {
+  .inlineStuff {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }

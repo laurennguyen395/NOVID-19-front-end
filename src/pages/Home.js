@@ -9,13 +9,11 @@ import UsLineChart from '../components/UsLineChart'
 import { Card } from 'react-bootstrap'
 
 const allStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
-// Could make each state an opject with upper lower and full name. allStates.filter((state) => {
-// return state.abv = state
-// })
 
 const Home = () => {
   const [us, setUs] = useState()
   const [usHistory, setUsHistory] = useState()
+  const [usHistArr, setUsHistArr] = useState([])
 
   useEffect(() => {
     fetchUsData()
@@ -29,8 +27,14 @@ const Home = () => {
   }
   
   const fetchUsHistoryData = () => {
+    const tempArr = []
     UsModel.allHistory().then(data => {
       setUsHistory(data)
+
+      for (let i = 0; i <= 20; i++) {
+        tempArr.push(data[i])
+      }
+      setUsHistArr(tempArr)
     })
   }
 
@@ -42,10 +46,15 @@ const Home = () => {
     return null
   }
 
+  if (usHistArr.length === 0) {
+    return null
+  }
+
   const stateCode = allStates.map(function (item) {
     return <Link to={`/states/${item.toLowerCase()}`} key={Math.random()}>{item} </Link>
   });
 
+  
   return (
     <div>
 
@@ -59,12 +68,7 @@ const Home = () => {
         <UsVentilatorChart us={us} />
         <UsPositiveVsNegativeChart us={us} />
       </div>
-
-
-        <UsLineChart usHistory={usHistory} />
-
-
-
+        <UsLineChart usHistArr={usHistArr} />
     </div>
   )
 }
