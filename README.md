@@ -29,7 +29,7 @@ Personally, I wanted to be able to work with an external API in order to play wi
 ![SPNWireframe](https://i.imgur.com/J7wPovB.png)
 
 ## Code Snippets
-`
+```
    const fetchSingleStateHistData = () => {
         const singStTempArr = []
         ByStateModel.allStateHistory().then(data => {
@@ -41,8 +41,8 @@ Personally, I wanted to be able to work with an external API in order to play wi
             setSingleStateHistArr(singStTempArr)
         })
     }
-  `
-  `
+  ```
+  ```
   return (
         <div className='onestline'>
             <Line id="line"
@@ -72,6 +72,7 @@ Personally, I wanted to be able to work with an external API in order to play wi
                     responsive: true
                 }}
             />
-        </div>`
+        </div>
+        ```
   
   
