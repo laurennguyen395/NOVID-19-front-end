@@ -22,4 +22,6 @@ Personally, I wanted to be able to work with an external API in order to play wi
 - React Spring
 - Chart.js
 
+## Wireframing / Pre-Code Planning
 
+![SPNWireframe](public/images/wireframe/SPNWireframe.png)
