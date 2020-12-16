@@ -84,6 +84,6 @@ The following code makes a call to a model that makes a call to the API, calling
 - Finding an API that provides statistics for specific cities inside a users saved state.
 
 ## Assets
-- [The Covid Tracking Project](https://covidtracking.com/)
-- [Figma](https://www.figma.com/file/zafn5kRrCsXyMfZ5pbRjWY/NOVID-19?node-id=0%3A1)
-- [Trello](https://trello.com/b/iwIXypZi/novid-19)
+[The Covid Tracking Project](https://covidtracking.com/)
+[Figma](https://www.figma.com/file/zafn5kRrCsXyMfZ5pbRjWY/NOVID-19?node-id=0%3A1)
+[Trello](https://trello.com/b/iwIXypZi/novid-19)
