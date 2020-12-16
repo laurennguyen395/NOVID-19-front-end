@@ -42,8 +42,6 @@ The following code makes a call to a model that makes a call to the API, calling
             setSingleStateHistArr(singStTempArr)
         })
     }
-  ```
-  ```
   return (
         <div className='onestline'>
             <Line id="line"
