@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const OneStateCard = ({states}) => {
     console.log(states)
@@ -7,7 +8,7 @@ const OneStateCard = ({states}) => {
     return(
         <div>
         {states.map((state, index) => {
-            return(<h3>{state.savedState.toUpperCase()}</h3>)
+            return(<Link to={`/states/${state.savedState.toLowerCase()}`} key={Math.random()}>{state.savedState.toUpperCase()} </Link>)
         })}
         </div>
     )

@@ -30,8 +30,6 @@ const MyStates = () => {
   return (
     <div className="myStates">
       <h1>My States</h1>
-      <h3>C'mon lauren, You can do it. SAVE STATES HERE!!</h3>
-
       {mapSavedStates()}
       <OneStateCard states={states} key={states.id} />
     </div>
