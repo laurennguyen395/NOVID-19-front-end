@@ -24,8 +24,6 @@ Personally, I wanted to be able to work with an external API in order to play wi
 
 ## Wireframing / Pre-Code Planning
 
-![NVD19Wireframe](## Wireframing / Pre-Code Planning
-
 ![SPNWireframe](https://i.imgur.com/J7wPovB.png)
 
 ## Code Snippets
