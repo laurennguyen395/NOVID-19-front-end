@@ -80,6 +80,17 @@ Working through everything indiviually was a lot more challenging than past proj
 - Working more with different styles, different colors and different pictures in order to make the page appear more professional.
 - Finding an API that provides statistics for specific cities inside a users saved state.
 
+## Special Thanks To...
+Without these people, the app would not be where it is today!
+
+Instructors and TAs
+- Brock Whitbread-Cole
+- James Sinkler
+- Jacob Kleiman
+- Seanny Phoenix
+
+- Struggle Bus Support System
+
 ## Assets
 - [The Covid Tracking Project](https://covidtracking.com/)
 - [Figma](https://www.figma.com/file/zafn5kRrCsXyMfZ5pbRjWY/NOVID-19?node-id=0%3A1)
