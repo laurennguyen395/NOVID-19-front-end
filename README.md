@@ -24,8 +24,6 @@ Personally, I wanted to be able to work with an external API in order to play wi
 
 ## Wireframing / Pre-Code Planning
 
-![NVD19Wireframe](## Wireframing / Pre-Code Planning
-
 ![SPNWireframe](https://i.imgur.com/J7wPovB.png)
 
 ## Code Snippets
@@ -81,6 +79,17 @@ Working through everything indiviually was a lot more challenging than past proj
 - I would love to be able to find downloadable outlines of each individual state, so when a user saves a state, instead of just saving the abbreviation of the state, it populates the 'MyStates' page with images of their states.
 - Working more with different styles, different colors and different pictures in order to make the page appear more professional.
 - Finding an API that provides statistics for specific cities inside a users saved state.
+
+## Special Thanks To...
+Without these people, the app would not be where it is today!
+
+Instructors and TAs
+- Brock Whitbread-Cole
+- James Sinkler
+- Jacob Kleiman
+- Seanny Phoenix
+
+- Struggle Bus Support System
 
 ## Assets
 - [The Covid Tracking Project](https://covidtracking.com/)
