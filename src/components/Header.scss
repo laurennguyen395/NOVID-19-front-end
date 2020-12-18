@@ -1,14 +1,15 @@
+
 header {
-  background-color: rgba(42, 111, 151, 0.9);
+  background-color: rgba(42, 111, 151, 0.6);
   text-align: left;
   padding: 20px 10px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-
+  width: 100vw;
   a {
     color: #fff;
     transition: color 0.3s ease;
+    font-size: 22px;
 
     &:hover {
       color: darken(#fff, 20%)
@@ -17,11 +18,13 @@ header {
   li.login{
     display: flex;
     justify-content: space-evenly;
-    margin-right:50px;
+    margin-right:5px;
   }
-  
+  div.logo{
+    margin-left: 14px;
+  }
   div.links{
-    margin-top:39px;
+    margin-top:55px;
   }
   .novid-head{
     color: #fff;
@@ -39,5 +42,10 @@ header {
       list-style-type: none;
       padding: 0px 10px;
     }
+    @media only screen and (max-width: 1080px) {
+      a{
+        font-size: 19px;
+        }
+      }
+    }
   }
-}

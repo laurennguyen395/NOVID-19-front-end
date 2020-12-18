@@ -34,7 +34,7 @@ const OneStateLineChart = ({ singleState }) => {
                                 'rgba(255,255,255, 0)',
                             ],
                             borderColor: [
-                                'rgba(114, 194, 23, 0.5)'
+                                'rgba(114, 194, 23, 0.6)'
                             ]
                         },
                     ],

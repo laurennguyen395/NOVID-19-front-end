@@ -12,8 +12,8 @@ const UsVentilatorChart = ({us}) => {
                     label: '# of votes',
                     data: [us.onVentilatorCurrently, us.deathIncrease],
                     backgroundColor: [
-                        'rgba(114, 194, 23, 0.4)',
-                        'rgba(137, 194, 217,0.4)',
+                        'rgba(114, 194, 23, 0.5)',
+                        'rgba(137, 194, 217,0.5)',
                     ],
                     borderColor: [
                         'rgba(114, 194, 23, 0.5)',
