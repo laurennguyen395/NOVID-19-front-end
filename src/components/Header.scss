@@ -18,9 +18,11 @@ header {
   li.login{
     display: flex;
     justify-content: space-evenly;
-    margin-right:50px;
+    margin-right:5px;
   }
-  
+  div.logo{
+    margin-left: 14px;
+  }
   div.links{
     margin-top:55px;
   }
@@ -40,5 +42,10 @@ header {
       list-style-type: none;
       padding: 0px 10px;
     }
+    @media only screen and (max-width: 1080px) {
+      a{
+        font-size: 19px;
+        }
+      }
+    }
   }
-}

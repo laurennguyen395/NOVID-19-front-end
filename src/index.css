@@ -9,12 +9,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-div.logo{
-  margin-left: 14px;
+div#root{
+  width: 100vw;
+  align-items: center;
 }
+div.App {
+  margin: 0 auto;
+  width: 100vw;
+}
+/* div.logo{
+  margin-left: 14px;
+} */
 h1{
   font-size: 50px;
   margin-top: 20px;
+}
+h2{
+  font-size: 40px;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -27,7 +38,7 @@ code {
   height: 100vh;
 }
 .footer{
-  background-color: #2a6f97;
+  background-color: rgba(42, 111, 151, 0.6);
   color: white;
   width: 100%;
   height: 2.5rem; 
@@ -123,6 +134,10 @@ canvas#line.chartjs-render-monitor{
   height: 25px;
   width: 200px;
 }
+/* .login{
+  background-color: hotpink;
+  margin-right: 25px;
+} */
 button {
   background-color: white;
   border-radius: 5px;
@@ -146,23 +161,11 @@ button:hover {
 .myStates{
   height: 100vh;
 }
-
 a.mine{
   font-size:25px;
   display: flex;
   justify-content: center;
   margin: 25px auto;
-}
-@media only screen and (max-width: 1085px) {
-  body {
-    margin: 0;
-    height: 100vh;
-    background: url('https://i.imgur.com/EeNThth.jpg');
-    background-position: top;
-    background-repeat: no-repeat;
-    background-attachment: local;
-    background-size: cover;
-  }
 }
 @media only screen and (max-width: 1080px) {
   .inlineStuff {
