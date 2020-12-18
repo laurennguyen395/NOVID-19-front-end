@@ -95,4 +95,3 @@ Instructors and TAs
 - [The Covid Tracking Project](https://covidtracking.com/)
 - [Figma](https://www.figma.com/file/zafn5kRrCsXyMfZ5pbRjWY/NOVID-19?node-id=0%3A1)
 - [Trello](https://trello.com/b/iwIXypZi/novid-19)
-
