@@ -94,7 +94,7 @@ const OneState = (props) => {
                     <OneStateLineChart singleState={singleStateHistArr} />
                 </>
             ) : ('Please Reload The Page')}
-            <button id='saveState' onClick={addState}>Save State</button>
+            {/* <button id='saveState' onClick={addState}>Save State</button> */}
         </div>
     )
 }
